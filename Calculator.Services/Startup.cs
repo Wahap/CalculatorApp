@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Calculator.Data.Repository.Data;
 
 namespace Calculator.Services
 {
@@ -22,11 +23,12 @@ namespace Calculator.Services
             Configuration = builder.Build();
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public static IConfigurationRoot Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
             // Add framework services.
             services.AddMvc();
         }
@@ -38,6 +40,16 @@ namespace Calculator.Services
             loggerFactory.AddDebug();
 
             app.UseMvc();
+        }
+        public static IConfiguration GetConfig()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(System.AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json",
+                optional: true,
+                reloadOnChange: true);
+
+            return builder.Build();
         }
     }
 }
