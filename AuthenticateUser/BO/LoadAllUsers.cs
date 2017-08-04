@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace AuthenticateUser.BO
 {
-    public class LoadAllUsers : IAuthenticateManager<List<User>, User>
+    public class LoadAllUsers : IAuthenticationManager<List<User>, User>
     {
         public List<User> Manage(User value)
         {

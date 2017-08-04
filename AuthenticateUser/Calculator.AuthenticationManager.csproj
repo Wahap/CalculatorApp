@@ -40,16 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\AuthenticatedUsers.cs" />
     <Compile Include="BO\CreateUser.cs" />
     <Compile Include="BO\LoadAllUsers.cs" />
+    <Compile Include="Concrete\AuthenticateUser.cs" />
+    <Compile Include="DTO\AuthenticationRequest.cs" />
+    <Compile Include="DTO\AuthenticationResponse.cs" />
     <Compile Include="DTO\User.cs" />
-    <Compile Include="Interfaces\IAuthenticateManager.cs" />
+    <Compile Include="Interfaces\IAuthenticationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Calculator.Data.Repository\Calculator.Data.Repository.csproj">
       <Project>{E8E4D3E8-A10C-4778-97F7-81BFCC6D9A7C}</Project>
       <Name>Calculator.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calculator.EncryptionDecryption\Calculator.EncryptionDecryption.csproj">
+      <Project>{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}</Project>
+      <Name>Calculator.EncryptionDecryption</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

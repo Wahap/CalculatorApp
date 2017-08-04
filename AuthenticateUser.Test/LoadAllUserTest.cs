@@ -10,7 +10,7 @@ namespace AuthenticateUser.Test
     [TestFixture]
     public class LoadAllUserTest
     {
-        private IAuthenticateManager<List<User>, User> _loadVehicle;
+        private IAuthenticationManager<List<User>, User> _loadVehicle;
         private User _user;
 
         [SetUp]

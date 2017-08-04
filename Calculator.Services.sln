@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Services", "Calculator.Services\Calculator.Services.csproj", "{DF475192-98B8-446D-A856-1C399F88FF79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Services", "Calculator.Services\Calculator.Services.csproj", "{DF475192-98B8-446D-A856-1C399F88FF79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Data.Repository", "Calculator.Data.Repository\Calculator.Data.Repository.csproj", "{E8E4D3E8-A10C-4778-97F7-81BFCC6D9A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticateUser", "AuthenticateUser\AuthenticateUser.csproj", "{4306F3E2-4437-4696-81FD-F0A69479493C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.AuthenticationManager", "AuthenticateUser\Calculator.AuthenticationManager.csproj", "{4306F3E2-4437-4696-81FD-F0A69479493C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A59E2B7F-5F85-4539-8E25-D6E598B4CAB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticateUser.Test", "AuthenticateUser.Test\AuthenticateUser.Test.csproj", "{C170A2CA-5C11-491F-AD34-F0CE508F4B48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationManager.Test", "AuthenticateUser.Test\AuthenticationManager.Test.csproj", "{C170A2CA-5C11-491F-AD34-F0CE508F4B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.EncryptionDecryption", "Calculator.EncryptionDecryption\Calculator.EncryptionDecryption.csproj", "{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{C170A2CA-5C11-491F-AD34-F0CE508F4B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C170A2CA-5C11-491F-AD34-F0CE508F4B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C170A2CA-5C11-491F-AD34-F0CE508F4B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

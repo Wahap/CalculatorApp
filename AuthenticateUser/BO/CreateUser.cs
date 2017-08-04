@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace AuthenticateUser.BO
 {
-    public class CreateUser : IAuthenticateManager<List<User>, User>
+    public class CreateUser : IAuthenticationManager<List<User>, User>
     {
         public List<User> Manage(User value)
         {
