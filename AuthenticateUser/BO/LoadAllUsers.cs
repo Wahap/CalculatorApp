@@ -31,7 +31,7 @@ namespace AuthenticateUser.BO
                 }
             } 
             catch (Exception e)
-            {
+            { 
 
                 throw;
             }
