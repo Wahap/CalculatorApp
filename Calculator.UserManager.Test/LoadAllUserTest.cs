@@ -22,7 +22,7 @@ namespace Calculator.UserManager.Test
         [TestMethod]
         public void TestLoadAllUser()
         {
-         var users=   userManager.Manage(user);
+         var users=   userManager.Manage(user); 
 
             Assert.IsTrue(users.Count > 0);
 
