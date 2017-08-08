@@ -4,25 +4,20 @@ using Calculator.UserManager.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
 
 namespace Calculator.UserManager.BO
 {
-    public class LoadAllUsers : IUserManager<List<User>, User>
+   public class GetUser: IUserManager<User, User>
     {
-        public LoadAllUsers()
-        {
-
-        }
-
-        public List<User> Manage(User value)
+        public User Manage(User value)
         {
 
             try
             {
                 using (var db = new UnitOfWorkForCalculatorDb(null))
                 {
-                    List<User> users = db.UserRepository.GetAll().Select(a => new User
+                    var users = db.UserRepository.GetAll().Where(x => x.Password == value.Password && x.UserName == value.UserName).Select(a => new User
                     {
 
                         Password = a.Password,
@@ -31,7 +26,7 @@ namespace Calculator.UserManager.BO
                         UserName = a.UserName
 
 
-                    }).ToList();
+                    }).FirstOrDefault();
 
                     return users;
                 }

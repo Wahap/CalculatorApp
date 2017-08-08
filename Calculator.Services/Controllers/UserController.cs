@@ -6,26 +6,36 @@ using Calculator.UserManager.DTO;
 
 namespace Calculator.Services.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/User")]
+
+    [Route("api/userCont")]
     public class UserController : Controller
     {
-        private IUserManager<List<User>, User> userManager;
-        private LoadAllUsers loadAllUsers;
+  
+        private IUserManager<List<User>, User> userListManager;
+        private IUserManager<User, User> userManager;
 
-        public UserController():this(new LoadAllUsers())
+        public UserController(IUserManager<List<User>, User> userListManager, IUserManager<User, User> userManager)
         {
-
-        }
-
-        public UserController(IUserManager<List<User>, User> userManager)
-        {
+            this.userListManager = userListManager;
             this.userManager = userManager;
         }
 
-        public UserController(LoadAllUsers loadAllUsers)
+
+
+        [HttpPost]
+        [Route("getusers")]
+        public List<User> GetUsers([FromBody] User user=null)
         {
-            this.loadAllUsers = loadAllUsers;
+            return userListManager.Manage(user);
         }
+
+        [HttpPost]
+        [Route("getuser")]
+        public User GetUser([FromBody] User user = null)
+        {
+            return userManager.Manage(user);
+        }
+
+
     }
 }
