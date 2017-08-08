@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Calculator.Data.Repository.Data;
+
 
 namespace Calculator.Services
 {
@@ -28,7 +25,7 @@ namespace Calculator.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
+            services.Configure<Data.Repos.Model.ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
             // Add framework services.
             services.AddMvc();
         }

@@ -1,7 +1,7 @@
 ﻿using AuthenticateUser.DTO;
 using AuthenticateUser.Interfaces;
 using Calculator.Data.Repository.BO;
-
+using Calculator.UserManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,9 +1,10 @@
 ﻿using System;
 using AuthenticateUser.Interfaces;
-using Calculator.Data.Repository.Data;
-using Calculator.Data.Repository.BO;
+
 using System.Collections.Generic;
 using System.Linq;
+using Calculator.UserManager.DTO;
+using Calculator.Data.Repos.BO;
 
 namespace AuthenticateUser.BO
 {

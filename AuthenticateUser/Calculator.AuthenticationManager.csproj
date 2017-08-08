@@ -46,18 +46,21 @@
     <Compile Include="Concrete\AuthenticateUser.cs" />
     <Compile Include="DTO\AuthenticationRequest.cs" />
     <Compile Include="DTO\AuthenticationResponse.cs" />
-    <Compile Include="DTO\User.cs" />
     <Compile Include="Interfaces\IAuthenticationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Calculator.Data.Repository\Calculator.Data.Repository.csproj">
-      <Project>{E8E4D3E8-A10C-4778-97F7-81BFCC6D9A7C}</Project>
-      <Name>Calculator.Data.Repository</Name>
+    <ProjectReference Include="..\Calculator.Data.Repos\Calculator.Data.Repos.csproj">
+      <Project>{affd390d-3b1f-4f54-b91f-2f25fd8174aa}</Project>
+      <Name>Calculator.Data.Repos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Calculator.EncryptionDecryption\Calculator.EncryptionDecryption.csproj">
       <Project>{251C5922-F24E-4D3D-8DAB-27B7F43AD59C}</Project>
       <Name>Calculator.EncryptionDecryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\Calculator.UserManager.csproj">
+      <Project>{d9e3cdf5-360a-4f20-b5ac-22a1112f786e}</Project>
+      <Name>Calculator.UserManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

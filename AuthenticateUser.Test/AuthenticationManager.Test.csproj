@@ -65,10 +65,6 @@
       <Project>{4306F3E2-4437-4696-81FD-F0A69479493C}</Project>
       <Name>Calculator.AuthenticationManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Calculator.Data.Repository\Calculator.Data.Repository.csproj">
-      <Project>{E8E4D3E8-A10C-4778-97F7-81BFCC6D9A7C}</Project>
-      <Name>Calculator.Data.Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
