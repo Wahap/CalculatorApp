@@ -29,9 +29,19 @@ namespace Calculator.Services
         public void ConfigureServices(IServiceCollection services)
         {
 
-          
+
             services.AddScoped<IUserManager<List<User>, User>, LoadAllUsers>();
             services.AddScoped<IUserManager<User, User>, GetUser>();
+
+            // Add service and create Policy with options
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
 
             services.Configure<Data.Repos.Model.ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
             // Add framework services.
@@ -41,6 +51,15 @@ namespace Calculator.Services
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
+            app.UseCors("CorsPolicy");
+
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 

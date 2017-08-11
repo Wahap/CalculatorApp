@@ -30,8 +30,8 @@ namespace Calculator.Services.Controllers
         }
 
         [HttpPost]
-        [Route("getuser")]
-        public User GetUser([FromBody] User user = null)
+        [Route("login")]
+        public User Login([FromBody] User user=null )
         {
             return userManager.Manage(user);
         }
