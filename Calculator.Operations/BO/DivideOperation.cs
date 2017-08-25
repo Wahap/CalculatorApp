@@ -2,14 +2,19 @@
 
 namespace Calculator.OperationsManager.BO
 {
-    public class SumOperation<T> : IOperations<T, T, T>
+    public class DivideOperation<T> : IOperations<T, T, T>
     {
         public T Manage(T num1, T num2)
         {
             dynamic firstNumber = num1;
             dynamic secondNumber = num2;
 
-            return firstNumber + secondNumber;
+            if (secondNumber==0 || null)
+            {
+                return (dynamic)0;
+            }
+            return firstNumber / secondNumber;
         }
     }
+
 }

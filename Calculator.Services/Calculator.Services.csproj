@@ -24,6 +24,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Operations\Calculator.OperationsManager.csproj" />
     <ProjectReference Include="..\ClassLibrary1\Calculator.UserManager.csproj" />
   </ItemGroup>
 

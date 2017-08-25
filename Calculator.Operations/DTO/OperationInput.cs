@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Calculator.Operations.DTO
 {
-    public interface OperationInput<T>
+    public class OperationInput<T>
     {
-         T Num1 { get; set; }
-         T Num2 { get; set; }
+        public T Num1 { get; set; }
+        public T Num2 { get; set; }
     }
 }

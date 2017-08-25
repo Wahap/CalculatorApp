@@ -1,6 +1,6 @@
 ﻿using Calculator.Operations.Interfaces;
 
-namespace Calculator.Operations.BO
+namespace Calculator.OperationsManager.BO
 {
     public class SubOperation<T> : IOperations<T, T, T>
     {

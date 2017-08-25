@@ -1,4 +1,5 @@
 ﻿
+using Calculator.OperationsManager.Concrete;
 using Calculator.UserManager.BO;
 using Calculator.UserManager.DTO;
 using Calculator.UserManager.Interfaces;
@@ -32,6 +33,7 @@ namespace Calculator.Services
 
             services.AddScoped<IUserManager<List<User>, User>, LoadAllUsers>();
             services.AddScoped<IUserManager<User, User>, GetUser>();
+            services.AddScoped<OperationFactory, ConcreteOperationType>();
 
             // Add service and create Policy with options
             services.AddCors(options =>

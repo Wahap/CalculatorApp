@@ -1,9 +1,6 @@
-﻿using Calculator.Operations.BO;
-using Calculator.Operations.Interfaces;
+﻿using Calculator.Operations.Interfaces;
+using Calculator.OperationsManager.BO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Calculator.OperationsManager
 {
@@ -12,14 +9,14 @@ namespace Calculator.OperationsManager
     [TestClass]
     public class SumOperationTest
     {
-        private IOperations<int, int, int> operationManager;
-        private int number1;
-        private int number2;
+        private IOperations<dynamic, dynamic, dynamic> operationManager;
+        private dynamic number1;
+        private dynamic number2;
         [TestInitialize]
         public void Init()
         {
-            operationManager = new SumOperation<int>();
-            number1 = 2;
+            operationManager = new SumOperation<dynamic>();
+            number1 = 2.5;
             number2 = 3;
         }
 

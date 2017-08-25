@@ -1,5 +1,5 @@
-﻿using Calculator.Operations.BO;
-using Calculator.Operations.Interfaces;
+﻿using Calculator.Operations.Interfaces;
+using Calculator.OperationsManager.BO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Calculator.OperationsManager.Test
