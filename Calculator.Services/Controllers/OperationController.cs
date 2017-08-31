@@ -25,7 +25,7 @@ namespace Calculator.Services.Controllers
         public string Sum([FromBody]JObject json)
         {
 
-            OperationInput<string> request = JsonConvert.DeserializeObject<OperationInput<string>>(json.ToString());
+           OperationInput<string> request = JsonConvert.DeserializeObject<OperationInput<string>>(json.ToString());
             operationManager = operationFactory.CreateOperationType(OperationTypeEnum.Sum);
 
             return Calculate(request, operationManager);
@@ -45,7 +45,7 @@ namespace Calculator.Services.Controllers
         }
 
         [HttpPost]
-        [Route("multipy")]
+        [Route("multiply")]
         public string Multipy([FromBody]JObject json)
         {
 

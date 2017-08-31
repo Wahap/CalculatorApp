@@ -9,7 +9,7 @@ namespace Calculator.OperationsManager.BO
             dynamic firstNumber = num1;
             dynamic secondNumber = num2;
 
-            if (secondNumber==0 || null)
+            if (secondNumber==0 || secondNumber == null)
             {
                 return (dynamic)0;
             }
