@@ -28,15 +28,17 @@ namespace Calculator.Services
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        { 
 
 
             services.AddScoped<IUserManager<List<User>, User>, LoadAllUsers>();
             services.AddScoped<IUserManager<User, User>, GetUser>();
             services.AddScoped<OperationFactory, ConcreteOperationType>();
 
-            // Add service and create Policy with options
-            services.AddCors(options =>
+      services.Configure<Configurations>(options => Configuration.GetSection("ConnectionConfig").Bind(options));
+
+      // Add service and create Policy with options
+      services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()

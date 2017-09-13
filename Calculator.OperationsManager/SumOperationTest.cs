@@ -25,7 +25,7 @@ namespace Calculator.OperationsManager
         {
             var result = operationManager.Manage(number1, number2);
 
-            Assert.IsTrue(result==5);
+            Assert.IsTrue(result==5.5);
 
         }
     }
