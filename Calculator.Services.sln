@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.OperationsManage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.OperationsManager.Test", "Calculator.OperationsManager\Calculator.OperationsManager.Test.csproj", "{A445FDB9-E3B0-4E52-893C-1EF6BEFF0A17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.MongoDb.Repos", "Calculator.MongoDb\Calculator.MongoDb.Repos.csproj", "{9C3E86D7-28F1-4735-960E-26AE85442314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.MongoDb.Repos", "Calculator.MongoDb\Calculator.MongoDb.Repos.csproj", "{9C3E86D7-28F1-4735-960E-26AE85442314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.CommonSettings", "CommonSettings\Calculator.CommonSettings.csproj", "{B42BEEC6-9730-4CB8-8B7A-0BC6DF9844C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{9C3E86D7-28F1-4735-960E-26AE85442314}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C3E86D7-28F1-4735-960E-26AE85442314}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C3E86D7-28F1-4735-960E-26AE85442314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42BEEC6-9730-4CB8-8B7A-0BC6DF9844C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42BEEC6-9730-4CB8-8B7A-0BC6DF9844C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42BEEC6-9730-4CB8-8B7A-0BC6DF9844C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42BEEC6-9730-4CB8-8B7A-0BC6DF9844C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

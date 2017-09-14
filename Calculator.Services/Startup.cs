@@ -1,4 +1,5 @@
 ﻿
+using Calculator.CommonSettings;
 using Calculator.OperationsManager.Concrete;
 using Calculator.UserManager.BO;
 using Calculator.UserManager.DTO;
@@ -47,7 +48,7 @@ namespace Calculator.Services
                     .AllowCredentials());
             });
 
-            services.Configure<Data.Repos.Model.ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
+            //services.Configure<Data.Repos.Model.ConnectionConfig>(Configuration.GetSection("ConnectionConfig"));
             // Add framework services.
             services.AddMvc();
         }

@@ -4,6 +4,7 @@ using Calculator.UserManager.Interfaces;
 using Calculator.UserManager.BO;
 using Calculator.UserManager.DTO;
 using Microsoft.Extensions.Options;
+using Calculator.CommonSettings;
 
 namespace Calculator.Services.Controllers
 {

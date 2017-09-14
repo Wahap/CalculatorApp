@@ -1,6 +1,8 @@
 ﻿
+using Calculator.CommonSettings;
 using Calculator.Data.Repos.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Calculator.Data.Repos.DataContext
 {
@@ -9,11 +11,19 @@ namespace Calculator.Data.Repos.DataContext
     public DbSet<User> user { get; set; }
     public DbSet<Company> company { get; set; }
     public DbSet<OperationValues> operationValues { get; set; }
+    private IOptions<Configurations> conf;
+
+    public CalculatorDb(IOptions<Configurations> conf)
+    {
+      this.conf = conf;
+    }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseSqlServer(@"Server=(LocalDb)\MSSQLLocalDB;Database=CalculatorDb;Trusted_Connection=True;");
+      string connectionString = @"Server=" + conf.Value.ServerName + ";Database=" + conf.Value.CalculatorDbName + ";Trusted_Connection=True;";
+
+      optionsBuilder.UseSqlServer(connectionString);
     }
   }
 }

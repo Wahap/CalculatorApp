@@ -4,28 +4,35 @@ using Calculator.UserManager.Interfaces;
 using Calculator.UserManager.DTO;
 using System.Collections.Generic;
 using Calculator.UserManager.BO;
+using Microsoft.Extensions.Options;
+using Calculator.CommonSettings;
 
 namespace Calculator.UserManager.Test
 {
-    [TestClass]
-    public class LoadAllUserTest
+  [TestClass]
+  public class LoadAllUserTest
+  {
+    private IUserManager<List<User>, User> userManager;
+    private IOptions<Configurations> conf;
+    private User user;
+    [TestInitialize]
+    public void Init()
     {
-        private  IUserManager<List<User>, User> userManager;
-        private User user;
-        [TestInitialize]
-        public void Init()
-        {
-            userManager = new LoadAllUsers();
-            user = new User();
-        }
 
-        [TestMethod]
-        public void TestLoadAllUser()
-        {
-         var users=   userManager.Manage(user); 
-
-            Assert.IsTrue(users.Count > 0);
-
-        }
+      conf= Options.Create<Configurations>(new Configurations());
+      conf.Value.CalculatorDbName = "calculatorDb";
+      conf.Value.ServerName = "(LocalDb)\\MSSQLLocalDB";
+      userManager = new LoadAllUsers(conf);
+      user = new User();
     }
+
+    [TestMethod]
+    public void TestLoadAllUser()
+    {
+      var users = userManager.Manage(user);
+
+      Assert.IsTrue(users.Count > 0);
+
+    }
+  }
 }

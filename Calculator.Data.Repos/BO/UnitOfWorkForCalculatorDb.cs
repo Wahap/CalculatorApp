@@ -1,7 +1,9 @@
 ﻿
+using Calculator.CommonSettings;
 using Calculator.Data.Repos.DataContext;
 using Calculator.Data.Repos.Interfaces;
 using Calculator.Data.Repos.Model;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +18,10 @@ namespace Calculator.Data.Repos.BO
     private IRepository<User> _user;
     private IRepository<Company> _company;
     private IRepository<OperationValues> _operation;
-    public UnitOfWorkForCalculatorDb(IConnectionValue connectionValue)
+    private IOptions<Configurations> conf;
+    public UnitOfWorkForCalculatorDb(IConnectionValue connectionValue,IOptions<Configurations> conf)
     {
-      _calculatorDb = new CalculatorDb();
+      _calculatorDb = new CalculatorDb(conf);
     }
 
     public IRepository<User> UserRepository

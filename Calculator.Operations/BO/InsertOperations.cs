@@ -1,22 +1,25 @@
-﻿using Calculator.Data.Repos.BO;
+﻿using Calculator.CommonSettings;
+using Calculator.Data.Repos.BO;
 using Calculator.Data.Repos.Model;
 using Calculator.OperationsManager.Interfaces;
+using Microsoft.Extensions.Options;
 using System;
 
 namespace Calculator.OperationsManager.BO
 {
   public class InsertOperations : IOperationDb<bool, OperationValues>
   {
-    public InsertOperations()
+    private IOptions<Configurations> conf;
+    public InsertOperations(IOptions<Configurations> conf)
     {
-
+      this.conf = conf;
     }
     public bool Manage(OperationValues values )
     {
 
       try
       {
-        using (var db = new UnitOfWorkForCalculatorDb(null))
+        using (var db = new UnitOfWorkForCalculatorDb(null, conf))
         {
           db.OperationsRepository.Add(values);
 

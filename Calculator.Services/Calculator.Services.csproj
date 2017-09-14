@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Calculator.Operations\Calculator.OperationsManager.csproj" />
     <ProjectReference Include="..\ClassLibrary1\Calculator.UserManager.csproj" />
+    <ProjectReference Include="..\CommonSettings\Calculator.CommonSettings.csproj" />
   </ItemGroup>
 
 </Project>

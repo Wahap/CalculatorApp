@@ -1,6 +1,8 @@
-﻿using Calculator.Data.Repos.Model;
+﻿using Calculator.CommonSettings;
+using Calculator.Data.Repos.Model;
 using Calculator.OperationsManager.BO;
 using Calculator.OperationsManager.Interfaces;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -13,13 +15,18 @@ namespace Calculator.OperationsManager.Test
   [TestClass]
   public class InsertOperationTest
   {
+    private IOptions<Configurations> conf;
     private IOperationDb<bool, OperationValues> operationManager;
     private OperationValues values;
+   
     [TestInitialize]
     public void Init()
     {
-      operationManager = new InsertOperations();
-      values = new OperationValues() { FirstValue = "1", OperationName="sum",SecondValue="5"};
+      conf = Options.Create<Configurations>(new Configurations());
+      conf.Value.CalculatorDbName = "calculatorDb";
+      conf.Value.ServerName = "(LocalDb)\\MSSQLLocalDB";
+      operationManager = new InsertOperations(conf);
+      values = new OperationValues() { FirstValue = "11", OperationName="sum",SecondValue="55"};
 	  
 
 
