@@ -21,7 +21,9 @@ namespace Calculator.Data.Repos.DataContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      string connectionString = @"Server=" + conf.Value.ServerName + ";Database=" + conf.Value.CalculatorDbName + ";Trusted_Connection=True;";
+      string connectionString = "Server=tcp:" + conf.Value.ServerName + ",1433;Initial Catalog=" + conf.Value.CalculatorDbName + ";Persist Security Info=False;User ID=" + conf.Value.UserName + ";Password=" + conf.Value.Password + ";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+     // string connectionString = @"Server=" + conf.Value.ServerName + ";Database=" + conf.Value.CalculatorDbName + ";Trusted_Connection=True;";
 
       optionsBuilder.UseSqlServer(connectionString);
     }

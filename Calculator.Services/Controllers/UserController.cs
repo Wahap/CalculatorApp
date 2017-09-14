@@ -15,13 +15,11 @@ namespace Calculator.Services.Controllers
 
     private IUserManager<List<User>, User> userListManager;
     private IUserManager<User, User> userManager;
-    private IOptions<Configurations> settings;
 
-    public UserController(IUserManager<List<User>, User> userListManager, IUserManager<User, User> userManager, IOptions<Configurations> settings)
+    public UserController(IUserManager<List<User>, User> userListManager, IUserManager<User, User> userManager)
     {
       this.userListManager = userListManager;
       this.userManager = userManager;
-      this.settings = settings;
     }
 
 

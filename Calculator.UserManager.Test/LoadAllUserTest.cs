@@ -20,8 +20,10 @@ namespace Calculator.UserManager.Test
     {
 
       conf= Options.Create<Configurations>(new Configurations());
-      conf.Value.CalculatorDbName = "calculatorDb";
-      conf.Value.ServerName = "(LocalDb)\\MSSQLLocalDB";
+      conf.Value.CalculatorDbName = "CalculatorDb";
+      conf.Value.ServerName = "calculator.database.windows.net";
+      conf.Value.UserName = "abdul";
+      conf.Value.Password = "aa1011DD";
       userManager = new LoadAllUsers(conf);
       user = new User();
     }

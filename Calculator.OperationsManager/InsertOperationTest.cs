@@ -24,9 +24,11 @@ namespace Calculator.OperationsManager.Test
     {
       conf = Options.Create<Configurations>(new Configurations());
       conf.Value.CalculatorDbName = "calculatorDb";
-      conf.Value.ServerName = "(LocalDb)\\MSSQLLocalDB";
+      conf.Value.ServerName = "calculator.database.windows.net";
+      conf.Value.UserName = "abdul";
+      conf.Value.Password = "aa1011DD";
       operationManager = new InsertOperations(conf);
-      values = new OperationValues() { FirstValue = "11", OperationName="sum",SecondValue="55"};
+      values = new OperationValues() { FirstValue = "01", OperationName="div",SecondValue="20"};
 	  
 
 
