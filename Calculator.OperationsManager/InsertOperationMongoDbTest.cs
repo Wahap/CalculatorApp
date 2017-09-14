@@ -21,7 +21,7 @@ namespace Calculator.OperationsManager.Test
       conf.Value.MongoDbServer = "mongodb://localhost:27017";
       conf.Value.MongoDbDatabase = "operationstest";
       operationManager = new InsertOperationMongoDb();
-      values = new OperationValues() { FirstValue = "1", OperationName = "sum", SecondValue = "5" };
+      values = new OperationValues() { FirstValue = "11", OperationName = "div", SecondValue = "12" };
 
 
 

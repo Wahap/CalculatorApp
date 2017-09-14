@@ -16,8 +16,9 @@ namespace Calculator.MongoDb.Repos
       //   this.settings = Configurations.;
     }
     private static IMongoDatabase operationMongo;
+    static string connectionString = @"mongodb://calculator:lw23N3goFtzboFvuoUu8kMdjzhRWokeL3c0PYlHZSWyCmLKIO7EWg7gPXh4AEOvI9YmFv9UdJOlC3ovbsvqFew==@calculator.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
 
-    public static IMongoDatabase OperationMongo = operationMongo ?? (operationMongo = new MongoClient("mongodb://localhost:27017/operationstest")
+    public static IMongoDatabase OperationMongo = operationMongo ?? (operationMongo = new MongoClient(connectionString)
                                                    .GetDatabase("operationstest"));
 
   }
